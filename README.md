@@ -1,1 +1,1 @@
-# Legendary-pokemon-detector
+# Pokemon-Legendary-Detector

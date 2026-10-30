@@ -1,0 +1,13 @@
+{
+  "name": "legendary-scanner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Neon frontend and Express backend for the Pokemon legendary classifier",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
