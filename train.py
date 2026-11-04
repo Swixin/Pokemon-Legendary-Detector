@@ -9,6 +9,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score, f1_score, recall_score
 
 
+import json
 import joblib
 
 X_train, X_test, y_train, y_test = joblib.load("dataset/split.pkl")
@@ -30,14 +31,19 @@ models = {
     "brf": BalancedRandomForestClassifier(n_estimators=500, random_state=42)
 }
 
+model_metrics = {}
+
 for name, model in models.items():
     model.fit(X_train, y_train)
     model_predictions = model.predict(X_test)
 
-    print(name + ":")
-    print(f"Accu: {accuracy_score(y_test, model_predictions)}")
-    print(f"F1: {f1_score(y_test, model_predictions, zero_division=0)}")
-    print(f"Recall: {recall_score(y_test, model_predictions)}")
-    print("")
+    model_metrics[name] = {
+        "Accu": accuracy_score(y_test, model_predictions),
+        "F1": f1_score(y_test, model_predictions, zero_division=0),
+        "Recall": recall_score(y_test, model_predictions),
+    }
 
 joblib.dump(models, "models.pkl")
+
+with open("scores.json", "w") as f:
+    json.dump(model_metrics, f, indent=2)

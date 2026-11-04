@@ -18,6 +18,7 @@ y = y.astype(int)
 
 print(X.head(5))
 print(y.head(5))
+print(X.columns)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
 
