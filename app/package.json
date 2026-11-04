@@ -1,13 +1,17 @@
 {
-  "name": "legendary-scanner",
+  "name": "app",
   "version": "1.0.0",
-  "private": true,
-  "description": "Neon frontend and Express backend for the Pokemon legendary classifier",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.21.2"
+    "ejs": "^7.0.2",
+    "express": "^5.3.0"
   }
 }
